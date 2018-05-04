@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:background="@color/colorBackground"
+    android:layout_height="match_parent">
+
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+
+        android:ems="10"
+        android:layout_marginTop="68dp"
+        android:id="@+id/editText_reg_uid"
+        android:hint="username"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:textColorHint="@android:color/background_light"
+        tools:textAlignment="center"
+        android:typeface="serif"
+        android:textColor="@color/colorPrimaryDark"
+        android:textAllCaps="false" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:ems="10"
+        android:layout_below="@+id/editText_reg_uid"
+        android:layout_alignStart="@+id/editText_reg_uid"
+        android:layout_marginTop="22dp"
+        android:id="@+id/editText_reg_pass"
+        android:hint="password"
+        android:textColorHint="@android:color/background_light"
+        tools:textAlignment="center"
+        android:typeface="serif"
+        android:textColor="@color/colorPrimaryDark" />
+
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:ems="10"
+        android:layout_marginTop="31dp"
+        android:id="@+id/editText_reg_sq"
+        android:hint="security question"
+        android:layout_below="@+id/editText_reg_pass"
+        android:layout_alignStart="@+id/editText_reg_pass"
+        android:textColorHint="@android:color/background_light"
+        tools:textAlignment="center"
+        android:typeface="serif"
+        android:textColor="@color/colorPrimaryDark" />
+
+
+    <Button
+        android:text="register"
+        android:background="@color/colorPrimary"
+        android:layout_marginLeft="100dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/editText_reg_ans"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="48dp"
+        android:id="@+id/register_button"
+        android:textColor="@android:color/background_light"
+        android:textSize="24sp" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:textColor="@color/colorPrimaryDark"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:ems="10"
+        android:layout_marginTop="28dp"
+        android:id="@+id/editText_reg_ans"
+        android:hint="answer"
+        android:layout_below="@+id/editText_reg_sq"
+        android:layout_alignStart="@+id/editText_reg_sq"
+        android:textColorHint="@android:color/background_light"
+        tools:textAlignment="center"
+        android:typeface="serif" />
+</RelativeLayout>
