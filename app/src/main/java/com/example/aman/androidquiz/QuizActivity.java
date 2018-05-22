@@ -79,24 +79,24 @@ public class QuizActivity extends AppCompatActivity {
         Collections.shuffle(questionList);
 
         showNextQuestion();
-         buttonConfirmNext.setOnClickListener(new View.OnClickListener() {
-        @Override
-        public void onClick(View v) {
-            if(!answered){
-                if(rb1.isChecked()||rb2.isChecked()||rb3.isChecked())
-                {
-                    checkAnswer();
+        buttonConfirmNext.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(!answered){
+                    if(rb1.isChecked()||rb2.isChecked()||rb3.isChecked())
+                    {
+                        checkAnswer();
 
+                    }
+                    else{
+                        Toast.makeText(getApplicationContext(),"Please select an answer",Toast.LENGTH_SHORT).show();
+                    }
                 }
-                else{
-                    Toast.makeText(getApplicationContext(),"Please select an answer",Toast.LENGTH_SHORT).show();
-                }
+                else{showNextQuestion();}
             }
-            else{showNextQuestion();}
-        }
-    });
+        });
     }
-        private void showNextQuestion(){
+    private void showNextQuestion(){
         rb1.setTextColor(textColorDefaultRb);
         rb2.setTextColor(textColorDefaultRb);
         rb3.setTextColor(textColorDefaultRb);
@@ -153,7 +153,7 @@ public class QuizActivity extends AppCompatActivity {
             textViewCountDown.setTextColor(Color.RED);
         }else{
             textViewCountDown.setTextColor(textColorDefaultCd);
-    }}
+        }}
 
     private void checkAnswer(){
         answered=true;
@@ -193,19 +193,19 @@ public class QuizActivity extends AppCompatActivity {
             buttonConfirmNext.setText("Finish");
         }
     }
-   private void finishQuiz() {
-       Intent resultIntent = new Intent();
-       resultIntent.putExtra(EXTRA_SCORE,score);
-       setResult(RESULT_OK,resultIntent);
-       finish();
+    private void finishQuiz() {
+        Intent resultIntent = new Intent();
+        resultIntent.putExtra(EXTRA_SCORE,score);
+        setResult(RESULT_OK,resultIntent);
+        finish();
     }
     @Override
 
     public void onBackPressed(){
         if(backpressedTime + 2000>System.currentTimeMillis())
-                finishQuiz();
+            finishQuiz();
         else{
-                Toast.makeText(getApplicationContext(),"press back again to exit",Toast.LENGTH_SHORT).show();
+            Toast.makeText(getApplicationContext(),"press back again to exit",Toast.LENGTH_SHORT).show();
         }
         backpressedTime = System.currentTimeMillis();
     }
